@@ -1,13 +1,21 @@
-# What is this?
-This is a template for cs50's C project assignments. [Xmake](https://xmake.io/) is used to compile, link and run the program to reduce complexity and all the source code for an assignment is in the `src/` directory.
+# CS50 C Project Template
 
-# How do I use this?
-You can compile and link your program with:
-`$ xmake build`
+A template for CS50's C programming assignments. [Xmake](https://xmake.io/) handles compilation, linking, and running. All source code lives in the `src/` directory.
 
-And run the program with:
-`$ xmake run`
+## Usage
 
-`xmake run` will also build the project automatically before running if it is necessary.
+The project name is taken from the directory name. On first build, `src/<project-name>.c` is created automatically with a starter `main`.
 
-Automatic formatting is handled by [clang-format] which can be configured to run on file change in your editor. This ensures that your code will always be fully compliant with style50 and you will have a perfect 1.0 score.
+**Build:**
+```sh
+xmake build
+```
+
+**Run** (builds first if needed):
+```sh
+xmake run
+```
+
+## Formatting
+
+Code formatting is handled by [clang-format](https://clang.llvm.org/docs/ClangFormat.html) via the included `.clang-format` config. Configure your editor to run it on save to stay fully compliant with [style50](https://cs50.readthedocs.io/style50/).
