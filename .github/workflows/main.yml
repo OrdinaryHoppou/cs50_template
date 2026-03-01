@@ -1,16 +1,10 @@
 on:
   workflow_dispatch:
-    push:
-      branches:    
-        - main
-      paths:
-        - '**/RELEASE'
-    pull_request:
-      types: [opened, synchronize]
-      branches:
-        - main
-      paths:
-        - '**/RELEASE'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/RELEASE'
 
 jobs:
   gh-release:
