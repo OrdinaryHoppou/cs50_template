@@ -1,22 +1,15 @@
-name: Release
+name: Main
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - '**/RELEASE'
+    tags:
+      - "v*.*.*"
 
 jobs:
-  gh-release:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: pipe-cd/actions-gh-release@v2
-        with:
-          release_file: '**/RELEASE'
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Release
+        uses: softprops/action-gh-release@v2
